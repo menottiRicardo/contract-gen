@@ -34,7 +34,7 @@ const Jitsi = () => {
             MOBILE_APP_PROMO: false,
             TILE_VIEW_MAX_COLUMNS: 4,
           }}
-          getIFrameRef={(node) => (node.style.height = "40rem")}
+          getIFrameRef={(node) => (node.style.height = "90%")}
         />
       )}
     </div>

@@ -45,7 +45,7 @@ export default function handler(
     {
       algorithm: "RS256",
       header: {
-        kid: "vpaas-magic-cookie-33b54a1dc0b04e4794c75de675b2083a/9d5115",
+        kid: process.env.JITSI_KEY,
       },
     }
   );
