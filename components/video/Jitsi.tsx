@@ -16,14 +16,14 @@ const Jitsi = () => {
         body: JSON.stringify({ name: "ricardo", avatar: "", email: "" }),
       });
       const key = await rawKey.json();
-      console.log("key", key);
+      
       setJwt(key.jwt);
     };
     getKey();
   }, []);
-  console.log("et", process.env.NEXT_PUBLIC_APP_ID, "id");
+  
   return (
-    <div className="w-1/3">
+    <div className="md:w-1/3 ">
       {jwt !== "" && (
         <JaaSMeeting
           appId={process.env.NEXT_PUBLIC_APP_ID as string}
