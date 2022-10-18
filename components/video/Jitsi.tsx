@@ -21,20 +21,29 @@ const Jitsi = () => {
     };
     getKey();
   }, []);
-  console.log('et',process.env.NEXT_PUBLIC_APP_ID, 'id')
+  console.log("et", process.env.NEXT_PUBLIC_APP_ID, "id");
   return (
-    <div className=" h-screen">
+    <div className="w-1/3">
       {jwt !== "" && (
         <JaaSMeeting
           appId={process.env.NEXT_PUBLIC_APP_ID as string}
           jwt={jwt}
           roomName={"test"}
           interfaceConfigOverwrite={{
-            VIDEO_LAYOUT_FIT: "nocrop",
             MOBILE_APP_PROMO: false,
             TILE_VIEW_MAX_COLUMNS: 4,
+            SHOW_JITSI_WATERMARK: false,
+            SHOW_BRAND_WATERMARK: false,
+            SHOW_WATERMARK_FOR_GUESTS: false,
+            SHOW_POWERED_BY: false,
+            TOOLBAR_BUTTONS: ["settings", "raisehand"],
           }}
-          getIFrameRef={(node) => (node.style.height = "90%")}
+          configOverwrite={{
+            startWithAudioMuted: false,
+            startWithVideoMuted: false,
+            // prejoinPageEnabled: false 
+          }}
+          getIFrameRef={(node) => (node.style.height = "100%")}
         />
       )}
     </div>

@@ -26,7 +26,7 @@ export default function handler(
           name,
           avatar,
           email: email,
-          moderator: "true",
+          moderator: "false",
         },
         features: {
           livestreaming: "true",
